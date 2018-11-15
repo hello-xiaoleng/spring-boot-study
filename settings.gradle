@@ -8,3 +8,5 @@
  */
 
 rootProject.name = 'spring-boot'
+
+include ":modules:admin"
