@@ -62,6 +62,6 @@ public class UserGradeController {
     @ResponseBody
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
-        return "Hello World!";
+        return "chenjia,Hello World!";
     }
 }
