@@ -58,4 +58,10 @@ public class UserGradeController {
         log.info("getUserGradeByUserId,userId is:{}", userId);
         return user == null ? "" : String.valueOf(user.getGrade());
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String hello() {
+        return "Hello World!";
+    }
 }
