@@ -25,6 +25,8 @@ repositories {
 
 
 dependencies {
-	implementation('org.springframework.boot:spring-boot-starter-web')
+	compile project(':api')
+    compile group: 'com.alibaba', name: 'dubbo', version: '2.6.5'
+    implementation('org.springframework.boot:spring-boot-starter-web')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }

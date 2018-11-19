@@ -1,5 +1,6 @@
 package com.xiaoleng.admin.controller;
 
+import com.xiaoleng.admin.biz.UserGradeServiceImpl;
 import com.xiaoleng.admin.domain.mapper.UserGradeMapper;
 import com.xiaoleng.admin.domain.po.UserGrade;
 import com.xiaoleng.admin.domain.repository.UserGradeRepository;
@@ -27,6 +28,9 @@ public class UserGradeController {
 
     @Autowired
     private UserGradeMapper userGradeMapper;
+
+    @Autowired
+    private UserGradeServiceImpl userGradeService;
 
 
     @ResponseBody
@@ -61,7 +65,7 @@ public class UserGradeController {
 
     @ResponseBody
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String hello() {
-        return "chenjia,Hello World!";
+    public String hello(@RequestParam("userName") String userName) {
+        return userGradeService.userGreet(userName);
     }
 }
