@@ -55,7 +55,7 @@ public class UserGradeController {
     @Cacheable(value = "name", cacheManager = "myCacheManager", key = "'UserGradeController_'+'getUserGrade4'+#userId")
     public String getUserGrade4(@RequestParam("userId") String userId) {
         UserGrade user = userGradeMapper.getUserGradeByUserId(Integer.valueOf(userId));
-        log.info("getUserGradeByUserId,userId is:{}", userId);
+        log.info("getUserGradeByUserId,userId is:{}", user.getUserId());
         return user == null ? "" : String.valueOf(user.getGrade());
     }
 
