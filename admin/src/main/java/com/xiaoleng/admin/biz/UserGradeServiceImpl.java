@@ -1,13 +1,13 @@
 package com.xiaoleng.admin.biz;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.xiaoleng.api.UserDubboService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserGradeServiceImpl {
 
-    @Reference(version = "1.0.0")
+    @Autowired
     private UserDubboService userDubboService;
 
     public String userGreet(String userName) {
