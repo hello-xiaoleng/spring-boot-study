@@ -23,11 +23,11 @@ spring:
       ddl-auto: update  # 建表策略
       dialect: mysql
     show-sql: true  #显示SQL语句
-
-# mybatis
-mybatis:
-  mapper-locations: classpath:/mappers/*-mapper.xml
-  type-aliases-package: com.xiaoleng.admin.domain.po
+#
+## mybatis
+#mybatis:
+#  mapper-locations: classpath:/mappers/*-mapper.xml
+#  type-aliases-package: com.xiaoleng.admin.domain.po
 
 
 dubbo:

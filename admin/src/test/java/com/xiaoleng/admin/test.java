@@ -1,7 +1,9 @@
 package com.xiaoleng.admin;
 
+import com.xiaoleng.admin.domain.mapper.UserGradeMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -17,6 +19,9 @@ public class test {
     @Resource(name = "dataSource")
     private DataSource myDataSource;
 
+    @Autowired
+    private UserGradeMapper userGradeMapper;
+
     /**
      * 测试dataSource配置
      * 数据库连接是否正常
@@ -28,5 +33,11 @@ public class test {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(myDataSource);
         List<?> resultList = jdbcTemplate.queryForList("select * from User_Grades");
         System.out.println("===>>>>>>>>>>>" + resultList);
+    }
+
+    @Test
+    public void testMybatis() {
+        userGradeMapper.getUserGradeByUserId(1);
+
     }
 }
